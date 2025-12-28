@@ -1,30 +1,19 @@
 return {
-  "ellisonleao/gruvbox.nvim",
+  -- Using Lazy
+  "navarasu/onedark.nvim",
+  version = "v0.1.0", -- Pin to legacy version
   priority = 1000,
   config = function()
-    require("gruvbox").setup({
-  terminal_colors = true, -- add neovim terminal colors
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = {
-    strings = true,
-    emphasis = true,
-    comments = true,
-    operators = false,
-    folds = true,
-  },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
-  })
-  vim.cmd("colorscheme gruvbox")
-  end,
+    require('onedark').setup {
+      style = 'warmer',
+      code_style = {
+        comments = 'italic',
+        keywords = 'italic',
+        functions = 'italic',
+        strings = 'none',
+        variables = 'none'
+    },
+    }
+    require('onedark').load()
+  end
 }
